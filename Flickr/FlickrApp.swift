@@ -12,7 +12,7 @@ struct FlickrApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                SearchView()
+                SearchView(viewModel: .init())
             }
         }
     }

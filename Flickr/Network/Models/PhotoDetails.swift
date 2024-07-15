@@ -42,7 +42,6 @@ public struct PhotoDetails: Codable, Equatable, Hashable, Identifiable {
     
     public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(UUID.self, forKey: .id)
         self.title = try container.decode(String.self, forKey: .title)
         self.link = try container.decode(String.self, forKey: .link)
         self.description = try container.decode(String.self, forKey: .description)

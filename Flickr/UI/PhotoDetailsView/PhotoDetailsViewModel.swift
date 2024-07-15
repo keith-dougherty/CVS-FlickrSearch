@@ -23,15 +23,8 @@ final public class PhotoDetailsViewModel {
         photoDetails.author
     }
     
-    @MainActor
-    public var description: AttributedString {
-        let htmlText = photoDetails.description
-        if let nsAttributedString = try? NSAttributedString(data: Data(htmlText.utf8), options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil),
-           let attributedString = try? AttributedString(nsAttributedString, including: \.uiKit) {
-            return attributedString
-        } else {
-            return AttributedString(htmlText)
-        }
+    public var description: String {
+        photoDetails.description
     }
     
     public var imageURL: URL? {
